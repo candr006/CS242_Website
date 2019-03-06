@@ -16,7 +16,7 @@ header("Pragma: no-cache");
   <body>
     <div class="s004">
   
-      <form id="searchForm" action="results.php" method="POST">
+      <form id="searchForm" action="lucene_index/results.php" method="POST">
         <fieldset>
           <legend>Hangry Recipe Search</legend>
           <div class="inner-form">
