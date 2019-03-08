@@ -17,8 +17,7 @@
 		 <?php
 	 	//execute shell command that runs indexer using user input
 	 	//Need to add '2>&1' at the end of your shell command so that the results of the command get output
-	 	//exec('sh indexer.sh "'.$_POST['search_text'].'"',$results);
-	 	$results = file("/var/www/html/lucene_index/lucene_output.txt");
+	 	exec('sh indexer.sh "'.$_POST['search_text'].'"',$results);
 
 	 	$i=0;
 	 	//change this val if you want to output more top results
@@ -27,7 +26,7 @@
 	 	//start at index 10 because that's where the actual results are
 	 	$last_row=9+$num_top_results;
 	 	foreach ($results as $line) {
-	 		//if($i>9 && $i<$last_row){
+	 		if($i>9 && $i<$last_row){
 
 	 				//split up the output in order the format the results table
 	 				$larr=explode("-->",$line);
@@ -42,7 +41,7 @@
 		 			</td>
 		 		</tr>
 		 		<?php
-	 		//}
+	 		}
 
 	 		$i++;
 	 	}
