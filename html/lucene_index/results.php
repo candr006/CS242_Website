@@ -23,8 +23,8 @@
 		 	$search_text=str_replace(',',' ',$_POST["search_text"]);
 		 }
 
-	 	//exec('sh indexer.sh "'.$search_text.'"',$results);
-		$results=file("/var/www/html/lucene_index/lucene_output.txt");
+	 	exec('sh indexer.sh "'.$search_text.'"',$results);
+		//$results=file("/var/www/html/lucene_index/lucene_output.txt");
 
 	 	$i=0;
 	 	//change this val if you want to output more top results
@@ -33,14 +33,13 @@
 	 	//start at index 10 because that's where the actual results are
 	 	$last_row=9+$num_top_results+1;
 	 	foreach ($results as $line) {
-	 		//if($i>9 && $i<$last_row){
+	 		if($i>9 && $i<$last_row){
 
 	 				//split up the output in order the format the results table
 	 				$larr=explode("-->",$line);
 	 				$title_url=explode("--",$larr[1]);
 	 				$title=$title_url[0];
-	 				//$url=$title_url[1];
-	 				$url="https://www.google.com";
+	 				$url=$title_url[1];
 
 		 		?>
 		 		<tr>
@@ -51,7 +50,7 @@
 		 			</td>
 		 		</tr>
 		 		<?php
-	 		//}
+	 		}
 
 	 		$i++;
 	 	}
