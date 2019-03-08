@@ -993,7 +993,11 @@ legend {
 .results_table tr:hover {background-color:lightgrey;}
 
 .result_name{
-color: #003366;
+  color: #003366;
+}
+
+.result_name:hover{
+    text-decoration: underline;
 }
 
 .result_url{
@@ -1002,7 +1006,7 @@ color: #006400;
 
 .hero-image {
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("http://www.moulinchezlord.com/wp-content/uploads/2018/08/nutrition.jpg");
-  height: 20%;
+  height: 100px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -1032,4 +1036,11 @@ color: #006400;
 .hero-text button:hover {
   background-color: #555;
   color: white;
+}
+
+a{
+  text-decoration:none;
+}
+a:hover{
+  cursor: pointer;
 }
