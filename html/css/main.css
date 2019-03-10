@@ -984,6 +984,7 @@ legend {
 .results_table td {
   padding: 8px;
   margin-bottom:10px;
+  padding-bottom:15px;
   text-align: left;
   border-bottom: 1px solid #ddd;
 }
@@ -996,6 +997,7 @@ legend {
 
 .result_name{
   color: #003366;
+  font-size:17px;
 }
 
 .result_name:hover{
@@ -1003,7 +1005,13 @@ legend {
 }
 
 .result_url{
-color: #006400;
+  color: #006400;
+  font-size:16px;
+}
+
+.result_snippet{
+  color: #696969;
+  font-size:16px;
 }
 
 .hero-image {
@@ -1048,7 +1056,7 @@ a:hover{
 }
 
 
-/*-------------------Template from coderwall.com --------------------*/
+/*-------------------Template from proto.io --------------------*/
     .onoffswitch {
         position: absolute; width: 140px;
         -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;

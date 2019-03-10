@@ -28,11 +28,12 @@ header("Pragma: no-cache");
                 </svg>
               </button>
             </div>
-		    <div class="onoffswitch">
+		    <div class="onoffswitch" onclick="changeIndexVal()">
 		        <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked>
 		        <label class="onoffswitch-label" for="myonoffswitch">
 		            <span class="onoffswitch-inner"></span>
 		            <span class="onoffswitch-switch"></span>
+		            <input type="hidden" name="index_type" id="index_type" value="lucene_index">
 		        </label>
 		    </div>
 
@@ -45,26 +46,28 @@ header("Pragma: no-cache");
       </form>
     </div>
     <script src="js/extention/choices.js"></script>
+    <script src="js/main.js"></script>
     <script>
       var textPresetVal = new Choices('#choices-text-preset-values',
       {
         removeItemButton: true,
       });
 
-  function submitForm(){
-    document.getElementById("searchForm").submit(); 
-     /*var submitted = document.getElementById("choices-text-preset-values").value;
-     var results= "Results...";
-     
-     var htmlresults="<thead><th><b>Top Results for Query: "+submitted+" </b></th></thead><tbody><tr><td><span class='result_name'>Result Title</span><br>";
-     htmlresults=htmlresults+"<span class='result_url'>https://resulturl.com</span><br><span class='result_snippet'>Snippet goes here...</span></td></tr>";
-     htmlresults=htmlresults+"<tr><td><span class='result_name'>Result Title</span><br>";
-     htmlresults=htmlresults+"<span class='result_url'>https://resulturl.com</span><br><span class='result_snippet'>Snippet goes here...</span></td></tr>";
-     htmlresults+="</tbody>"
-      document.getElementById("result_table").innerHTML=htmlresults;*/
-    
-  }
+	  function submitForm(){
+	    document.getElementById("searchForm").submit(); 
+	     /*result_snippet*/
+	  }
+
+     function changeIndexVal(){
+     	if(document.getElementById('myonoffswitch').checked){
+     		document.getElementById("index_type").value ="lucene_index";
+     		document.getElementById('searchForm').action="lucene_index/results.php";
+     	}else{
+     		document.getElementById("index_type").value ="mr_index";
+     		document.getElementById('searchForm').action="mr_index/results.php";
+     	}
+     }
 
     </script>
-  </body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+  </body><!-- This template was made by Colorlib (https://colorlib.com) -->
 </html>
