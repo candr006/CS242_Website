@@ -12,19 +12,14 @@
 	  </a>
 	</div>
  	<table id="result_table" class="results_table">
- 		<thead><tr><th><b><?php echo "Top Results for Query: ".$_POST['search_text'].'- '.$_POST['index_type'];?></b></th></tr></thead>
+ 		<thead><tr><th><b><?php echo "Top Results for Query: ".$_POST['search_text']?></b></th></tr></thead>
  		 <tbody>
 		 <?php
 	 	//execute shell command that runs indexer using user input
 	 	//Need to add '2>&1' at the end of your shell command so that the results of the command get output
-		 if(is_array($_POST['search_text'])){
-		 	$search_text=implode(" ",$_POST['search_text']);
-		 }else{
-		 	$search_text=str_replace(',',' ',$_POST["search_text"]);
-		 }
 
-	 	//exec('sh indexer.sh "'.$search_text.'"',$results);
-		$results=file("/var/www/html/lucene_index/lucene_output.txt");
+	 	exec('sh indexer.sh "'.$search_text.'"',$results);
+		//$results=file("/var/www/html/lucene_index/lucene_output.txt");
 
 	 	$i=0;
 	 	//change this val if you want to output more top results
