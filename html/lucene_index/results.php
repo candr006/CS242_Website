@@ -18,7 +18,7 @@
 	 	//execute shell command that runs indexer using user input
 	 	//Need to add '2>&1' at the end of your shell command so that the results of the command get output
 
-	 	exec('sh indexer.sh "'.$search_text.'"',$results);
+	 	exec('sh indexer.sh "'.$_POST['search_text'].'"',$results);
 		//$results=file("/var/www/html/lucene_index/lucene_output.txt");
 
 	 	$i=0;
