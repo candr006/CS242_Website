@@ -28,15 +28,20 @@ header("Pragma: no-cache");
                 </svg>
               </button>
             </div>
+		    <div class="onoffswitch">
+		        <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked>
+		        <label class="onoffswitch-label" for="myonoffswitch">
+		            <span class="onoffswitch-inner"></span>
+		            <span class="onoffswitch-switch"></span>
+		        </label>
+		    </div>
+
           </div>
           <div class="suggestion-wrap">
             <! -- add spans here -->
           </div>
         </fieldset>
-  <div style="">
-  <table id="result_table" class="results_table" style="margin-top:25px; padding:5px;">
-  </table>
-  </div>
+
       </form>
     </div>
     <script src="js/extention/choices.js"></script>
