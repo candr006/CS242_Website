@@ -1,6 +1,6 @@
 <html>
  <head>
- 	  <title>Lucene Query Results</title>
+ 	  <title>MapReduce Query Results</title>
  	  <link href="../css/main.css" rel="stylesheet" />
   </head>
  <body>
