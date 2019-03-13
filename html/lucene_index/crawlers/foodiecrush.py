@@ -19,7 +19,7 @@ handler = urllib.request.HTTPCookieProcessor(cookie)
 opener = urllib.request.build_opener(handler)
 global_links = []
 
-f = open("foodie_crush_output16.txt", "w")
+f = open("recipes/foodie_crush_output1.txt", "w")
 
 def getLinks(url):
 	links=[]
@@ -65,10 +65,10 @@ for j in range(17,31):
 				f.write(html_page.text)
 				print(("Recipe num: "+str(pg_count)+" - "+link))
 				pg_count+=1
-				if(pg_count%40==0):
-					f.close()
-					out_num+=1
-					f = open("./recipes/foodie_crush_output"+str(out_num)+".txt", "w")
+				#if(pg_count%40==0):
+				f.close()
+				out_num+=1
+				f = open("./recipes/foodie_crush_output"+str(out_num)+".txt", "w")
 				
 
 				f.write("*********************************************************")

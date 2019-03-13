@@ -1010,7 +1010,7 @@ legend {
 }
 
 .result_snippet{
-  color: #484848;
+  color: #303030;
   font-size:16px;
 }
 
@@ -1084,12 +1084,12 @@ a:hover{
     .onoffswitch-inner:before {
         content: "Lucene";
         padding-left: 10px;
-        background-color: #34A7C1; color: #FFFFFF;
+        background-color: #335bff; color: #FFFFFF;
     }
     .onoffswitch-inner:after {
         content: "MapReduce";
         padding-right: 10px;
-        background-color: #61E682; color: ;
+        background-color: #008000; color: ;
         text-align: right;
     }
     .onoffswitch-switch {
