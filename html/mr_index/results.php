@@ -18,21 +18,14 @@
 	 	//execute shell command that runs indexer using user input
 	 	//Need to add '2>&1' at the end of your shell command so that the results of the command get output
 
-	 	//exec('python irs.py "'.$_POST['search_text'].'"',$results);
-		$results=file("/var/www/html/mr_index/mr_output.txt");
+	 	exec('python irs.py '.$_POST['search_text'],$results);
+		//$results=file("/var/www/html/mr_index/mr_output.txt");
 		$results=json_encode($results);
 		$results=json_decode($results);
 
 	 	$i=0;
-	 	//change this val if you want to output more top results
-	 	$num_top_results=5;
 
-	 	//start at index 10 because that's where the actual results are
-	 	$last_row=9+$num_top_results+1;
 	 	foreach ($results as $line) {
-	 		//if($i>9 && $i<$last_row){
-	 				//var_dump($line);
-	 				//echo "\n-----------------------------------------------------------------\n\n";
 	 				//split up the output in order the format the results table
 	 				$larr=explode("', 'Title': '",$line);
 	 				$url=str_replace("{'_id': {'URL': '","",$larr[0]);
@@ -53,7 +46,6 @@
 		 			</td>
 		 		</tr>
 		 		<?php
-	 		//}
 
 	 		$i++;
 	 	}
